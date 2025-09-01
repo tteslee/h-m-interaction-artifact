@@ -92,3 +92,4 @@ You can easily modify the framework by editing `src/data/cubeData.ts`:
 
 The application will automatically update to reflect your changes!
 
+
