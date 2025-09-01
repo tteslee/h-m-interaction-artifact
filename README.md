@@ -1,43 +1,41 @@
 # Human-Machine Interaction Cube
 
-An interactive 3D visualization framework for understanding human-machine interactions across different dimensions of agency, role modes, and interaction topologies.
+An interactive 3D visualization tool for exploring human-machine interaction scenarios and examples.
+
+This project is part of the Human Thriving research initiative.
 
 ## Features
 
 - **3D Interactive Cube**: Navigate through different interaction scenarios
-- **Examples Table**: Comprehensive examples for each interaction pattern
-- **Modern UI**: Clean, minimalist design inspired by 20th century modern graphic design
-- **Responsive**: Works on desktop and mobile devices
+- **Examples Table**: View detailed examples for each axis combination
+- **Modern UI**: Clean, accessible interface inspired by 20th century modern design
+- **Responsive Design**: Works on desktop and mobile devices
 
 ## Development
 
+### Prerequisites
+- Node.js 18+ 
+- npm
+
+### Setup
 ```bash
-# Install dependencies
 npm install
-
-# Start development server
 npm run dev
+```
 
-# Build for production
+### Build
+```bash
 npm run build
-
-# Preview production build
-npm run preview
 ```
 
 ## Deployment
 
-This project is configured for automatic deployment to GitHub Pages using GitHub Actions.
-
-### Automatic Deployment (Recommended)
-
-1. Push your changes to the `main` or `master` branch
-2. GitHub Actions will automatically build and deploy to GitHub Pages
-3. Your site will be available at: `https://[username].github.io/human-machine-interaction-cube/`
+### Automatic Deployment (GitHub Actions)
+The project automatically deploys to GitHub Pages via GitHub Actions on every push to the main branch.
 
 ### Manual Deployment
-
 ```bash
+npm run build
 npm run deploy
 ```
 
@@ -46,23 +44,18 @@ npm run deploy
 ```
 src/
 ├── components/          # React components
-│   ├── InteractionCube.tsx    # 3D cube visualization
-│   ├── ExamplesTable.tsx      # Examples table view
-│   └── ...
-├── data/               # Data files
-│   ├── cubeData.ts     # Cube structure and highlighted cells
-│   └── examplesData.ts # Interaction examples
-└── types.ts            # TypeScript type definitions
+├── data/               # Data files and examples
+├── types.ts            # TypeScript type definitions
+└── App.tsx             # Main application component
 ```
 
 ## Technologies
 
-- React 18
-- TypeScript
-- Three.js (via @react-three/fiber)
-- Vite
-- GitHub Pages
+- **React 18** with TypeScript
+- **Three.js** via @react-three/fiber for 3D graphics
+- **Vite** for fast development and building
+- **CSS3** for styling and animations
 
 ## License
 
-This project is part of the Human Thriving research initiative.
+MIT License
