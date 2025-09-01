@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react'
 import { useFrame } from '@react-three/fiber'
-import { Text } from '@react-three/drei'
 import { generateAllCells } from '../data/cubeData'
 import { FilterState, CubeCell } from '../types'
 import CubeCellComponent from './CubeCell'
@@ -28,15 +27,7 @@ const InteractionCube: React.FC<InteractionCubeProps> = ({
     })
     console.log('Filtered cells:', filtered.length, 'filters:', filters)
     
-    // Log first few filtered cells to see their data
-    if (filtered.length > 0) {
-      console.log('First 3 filtered cells:', filtered.slice(0, 3).map(cell => ({
-        x: cell.x, y: cell.y, z: cell.z,
-        xLabel: cell.xLabel,
-        yLabel: cell.yLabel,
-        zLabel: cell.zLabel
-      })))
-    }
+
     
     return filtered
   }, [allCells, filters])
@@ -49,16 +40,7 @@ const InteractionCube: React.FC<InteractionCubeProps> = ({
 
   return (
     <group>
-      {/* Test cell for debugging */}
-      <mesh 
-        position={[0, 0, 0]} 
-        onPointerOver={() => console.log('Test cell hovered')}
-        onPointerOut={() => console.log('Test cell unhovered')}
-        onClick={() => console.log('Test cell clicked')}
-      >
-        <boxGeometry args={[5, 5, 5]} />
-        <meshStandardMaterial color="red" />
-      </mesh>
+
 
       {/* Render all filtered cells */}
       {filteredCells.map((cell) => (
@@ -71,17 +53,7 @@ const InteractionCube: React.FC<InteractionCubeProps> = ({
         />
       ))}
       
-      {/* Debug: Show cell count and first few cell positions */}
-      <Text position={[0, 8, 0]} fontSize={1} color="white">
-        Cells: {filteredCells.length}
-      </Text>
-      
-      {/* Debug: Show first few cell positions */}
-      {filteredCells.slice(0, 5).map((cell, index) => (
-        <Text key={`debug-${index}`} position={[0, 7 - index * 0.5, 0]} fontSize={0.5} color="yellow">
-          Cell {index}: ({cell.x},{cell.y},{cell.z}) - {cell.xLabel}
-        </Text>
-      ))}
+
 
       {/* Axis labels */}
       <AxisLabels />
